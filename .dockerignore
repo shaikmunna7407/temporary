@@ -1,0 +1,6 @@
+.git
+.idea
+Downloads
+data
+target/*
+!target/employee-management.jar
