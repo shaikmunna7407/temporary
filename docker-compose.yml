@@ -1,0 +1,15 @@
+services:
+  employee-management:
+    build: .
+    container_name: employee-management-spring
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - employee_data:/app/data
+    environment:
+      PORT: 8080
+      DB_URL: jdbc:h2:file:/app/data/employees;DB_CLOSE_ON_EXIT=FALSE
+
+volumes:
+  employee_data:
